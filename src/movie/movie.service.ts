@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { MovieGateway } from './movie.gateway';
-import { parseISO } from 'date-fns';
+import { parseISO } from 'date-fns/parseISO';
 
 @Injectable()
 export class MovieService {
