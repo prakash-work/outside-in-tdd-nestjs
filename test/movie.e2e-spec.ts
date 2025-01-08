@@ -84,4 +84,14 @@ describe('movie aggregator for profitability', () => {
     expect(reseponse.body).toBeDefined();
     expect(reseponse.body.profitable).toBe("PROFITABLE");
   });
+
+   it.only('given a movie name, gives the rating of the movie', async () => {
+    const movieName = 'batman';
+    const response = await request(app.getHttpServer()).get(
+      `/movies/${movieName}/rating`,
+    );
+    expect(response.status).toBe(200);
+    expect(response.body).toBeDefined();
+    expect(response.body.rating).toBe(4);
+  });
 });

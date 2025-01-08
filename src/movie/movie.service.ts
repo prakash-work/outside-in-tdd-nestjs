@@ -31,6 +31,13 @@ export class MovieService {
     return { profitable: "PROFITABLE" };
   }
 
+  async getRating(movieName: string) {
+    const movie = await this.gateway.getMovie(movieName);
+    const scaledRating = Math.round(movie?.data?.rating) / 2;
+    console.log({scaledRating});
+    return { rating: scaledRating };
+  }
+
   private parse(movie) {
     const date = parseISO(movie.data.meta.releasedOn);
     return date;
