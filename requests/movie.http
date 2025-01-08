@@ -19,3 +19,9 @@ GET http://localhost:3000/movies/batman/profitable
   #profitable: NONPROFITABLE
   #profitable: BLOCKBUSTER
 #}
+
+### rating
+GET http://localhost:3000/movies/batman/rating
+#
+#rating: float
+#
