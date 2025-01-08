@@ -165,4 +165,18 @@ describe('MovieService', () => {
     expect(gateway.getMovie).toHaveBeenCalledWith('fake');
     expect(response.profitable).toEqual("BLOCKBUSTER");
   });
+
+  it('should call gateway to get the movie', async () => {
+    // given
+    const movieName = 'fake';
+    gateway.getMovie = vi.fn().mockImplementationOnce(() => Promise.resolve({
+      data: {
+        rating: 8
+      }
+    }));
+    // when
+    const response = await service.getRating(movieName);
+    //then
+    expect(gateway.getMovie).toHaveBeenCalledWith('fake');
+  }) 
 });
