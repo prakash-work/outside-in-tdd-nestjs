@@ -59,7 +59,8 @@ describe('movie aggregator for profitability', () => {
         status: 200,
         body: {
           data: {
-            money: {made: 10, budget: 9}
+            money: {made: 10, budget: 9},
+            rating: 8
           },
         },
       },
